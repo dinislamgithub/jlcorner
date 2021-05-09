@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="css/album.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+footer {
+    padding-top: 59rem !important;
+    padding-bottom: 3rem;
+}
+
+.sidenav {
+  height: 1200px;
+  width: 225px;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px; 
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+
+</style>
+
+  </head>
+
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	  
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              LANGUAGE
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLanguage">
+              <a class="dropdown-item" href="#" id="javaId">JAVA</a>
+              <a class="dropdown-item" href="#" id="pythonId">PYTHON</a>
+              <a class="dropdown-item" href="#" id="phpId">PHP</a>
+              <a class="dropdown-item" href="#" id="androidId">ANDROID</a>
+              <a class="dropdown-item" href="#" id="androidId">C_C++</a>
+            </div> 
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonDatabase" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DATABASE
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonDatabase">
+              <a class="dropdown-item" href="#" id="mysqlId">MYSQL_JDBC</a>
+              <a class="dropdown-item" href="#" id="pythonId">POSTGRESQL</a>
+              <a class="dropdown-item" href="#" id="phpId">ORACLE</a>
+              <a class="dropdown-item" href="#" id="androidId">MONGODB</a>
+              <a class="dropdown-item" href="#" id="mysqlId">H2</a>
+              <a class="dropdown-item" href="#" id="androidId">DYNAMODB</a>
+              <a class="dropdown-item" href="#" id="androidId">REDIS</a>
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonDatabaseOrm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DB ORM
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonDatabaseOrm">
+              <a class="dropdown-item" href="#" id="mysqlId">HIBERNATE</a>
+              <a class="dropdown-item" href="#" id="pythonId">JPA</a>
+              <a class="dropdown-item" href="#" id="phpId">SPRING DATA JPA</a> 
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonUi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              SCRIPT & UI
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonUi">
+              <a class="dropdown-item" href="#" id="mysqlId">JAVASCRIPT</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SASS_CSS3_HTML</a>
+              <a class="dropdown-item" href="#" id="pythonId">JQUERY</a>
+              <a class="dropdown-item" href="#" id="pythonId">AJAX_JSON</a>
+              <a class="dropdown-item" href="#" id="pythonId">NODEJS</a>
+              <a class="dropdown-item" href="#" id="pythonId">TYPESCRIPT</a>
+              <a class="dropdown-item" href="#" id="phpId">REACTJS_REDUX</a>
+              <a class="dropdown-item" href="#" id="androidId">ANGULAR_JS</a>
+              <a class="dropdown-item" href="#" id="androidId">BOOTSTRAP</a>
+              <a class="dropdown-item" href="#" id="androidId">THYMELEAF</a>
+              <a class="dropdown-item" href="#" id="androidId">JSF</a>
+              <a class="dropdown-item" href="#" id="androidId">JSP_JSTL</a>
+              <a class="dropdown-item" href="#" id="androidId">STRUTS_EJB</a> 
+              <a class="dropdown-item" href="#" id="androidId">FREE MAKER_VELOCITY</a> 
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonLinux" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              LINUX ALL
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinux">
+              <a class="dropdown-item" href="#" id="mysqlId">LINUX</a>
+            </div>
+          </div>
+          
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonVCS" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              VCS
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonVCS">
+              <a class="dropdown-item" href="#" id="mysqlId">GIT</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SUBVERSION</a>
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonFramework" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              FRAMEWORK
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonFramework">
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING SECURITY</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING BOOT</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING SESSION</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING WEB SERVICE</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING WEB FLOW</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPRING MICROSERVICE</a>
+  
+              <a class="dropdown-item" href="#" id="mysqlId">------</a>
+              <a class="dropdown-item" href="#" id="mysqlId">LARAVEL</a>
+              <a class="dropdown-item" href="#" id="mysqlId">DJANGO</a>
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonDsalgo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DS_ALGO
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonDsalgo">
+              <a class="dropdown-item" href="#" id="mysqlId">DATA STRUCTURE_ALGORITHOM</a> 
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonAws" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              AWS_DEVOPS
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonAws">
+              <a class="dropdown-item" href="#" id="mysqlId">AWS TOPICS</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">DOCKER</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">JENKINS</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">NGINX</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">KUBERNATE</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">RABBITmq_ACTIVEma_KAFKA</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">ANSIBLE</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">DEVOPS_TOPICS</a>
+  
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonReport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              REPORTING
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonReport">
+              <a class="dropdown-item" href="#" id="mysqlId">JASPER REPORT</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">CRYSTAL REPORT</a> 
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonServer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              WEB SERVER
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonServer">
+              <a class="dropdown-item" href="#" id="mysqlId">TOMCAT</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">GLASHFISH</a>
+              <a class="dropdown-item" href="#" id="mysqlId">WEBSPHERE</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">WEBLOGIC</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">JBOSS</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">WILDFLY</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">JETTY</a>  
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonUnittesting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            UNIT TESTING
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonUnittesting">
+              <a class="dropdown-item" href="#" id="mysqlId">JUNIT</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">TESTNG</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">JMETER</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">SALENIUM</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">MOCKITO</a> 
+              <a class="dropdown-item" href="#" id="mysqlId">JCOMPILER</a>
+              <a class="dropdown-item" href="#" id="mysqlId">SPOCK</a>
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonDomainHosting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           DOMIAN_HOSTING
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonDomainHosting">
+              <a class="dropdown-item" href="#" id="mysqlId">DOMAIN_HOSTING_CLOUD</a>  
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonBuildtool" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           BUILD TOOLS
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonBuildtool">
+              <a class="dropdown-item" href="#" id="mysqlId">MAVEN</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">GRADLE</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">ANT</a>
+              <a class="dropdown-item" href="#" id="mysqlId">-----</a>
+              <a class="dropdown-item" href="#" id="mysqlId">FIGMA_CONFLUENCE_BITRIX24_JIRA_TRELLO</a>  
+            </div>
+          </div>
+  
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonMisc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           MISC
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonMisc">
+              <a class="dropdown-item" href="#" id="mysqlId">MISC...</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">SOFTWARE COMMAND_UBUNTU</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">SOFTWARE COMMAND_MACOS</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">SOLUTION URL_ADDRESS</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">IMPORTANT URL</a>
+              <a class="dropdown-item" href="#" id="mysqlId">CSE_BEST_TOPICS</a>
+              <a class="dropdown-item" href="#" id="mysqlId">---------</a>
+              <a class="dropdown-item" href="#" id="mysqlId">PROJECT_EXAMPLE</a>
+              <a class="dropdown-item" href="#" id="mysqlId">C_PROJECT_NOTES</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button href="#" class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButtonEnglish" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           ENGLISH
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEnglish">
+              <a class="dropdown-item" href="#" id="mysqlId">GRAMMER</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">VOCABULARY</a>  
+              <a class="dropdown-item" href="#" id="mysqlId">SPOKEN</a>
+              <a class="dropdown-item" href="#" id="mysqlId">PHONETICS</a> 
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+	
+    <div class="navbar navbar-dark bg-dark">
+      <div class="container d-flex justify-content-between">
+	      <!-- <ul> 
+				  <li><a href="#" id="javaId">JAVA</a></li> 
+				   <li><a href="#" id="mysqlId">MYSQL</a></li>
+				  <li style="float:right"><a href="#" id="javascriptId">JAVASCRIPT</a></li>
+        </ul> -->
+
+    
+        
+
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button style="cursor: pointer"><i class="fa fa-angle-double-down" id="sideMenuId"></i> 
+          <i class="fa fa-angle-double-up" id="sideMenuId2"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <div id="javaDiv" class="sidenav">
+
+            <a href="#" id="introductionId">Introduction</a>
+            <a href="#" class="dropbtn" >JAVA
+                    <i class="fa fa-caret-down" id="javaDownCaretId"></i>  
+                    <i class="fa fa-caret-up" id="javaUpCaretId"></i>  
+            </a>
+                  <div id="javaSubMenuDiv" style="padding-left: 10px;">
+                    <a href="#" id="stringId">String</a>
+                    <a href="#">Collection</a>
+                    <a href="#">New Feature</a>
+                  </div>  
+
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+
+          <div id="mysqlDiv" class="sidenav">
+            <a href="#about">MYSQL</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+        </div>
+
+        <div class="col-sm-10">
+          <!-- <div class="text-muted"> -->
+            <div class="container din" id="introductionContentDiv" style="padding: 0px !important;">                
+              <iframe src="pages/language/java/introduction.html" style="width: 100%; height: 1200px;"></iframe>
+            </div>
+            <div class="container din" id="stringContentDiv" style="padding: 0px !important;">                
+                    <iframe src="pages/language/java/string.html" style="width: 100%; height: 1200px;"></iframe>
+            </div>
+           
+                
+          <!-- </div>    -->
+        </div> 
+
+        
+
+
+
+      </div>
+    </div>
+
+    <!-- <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+        <footer class="text-muted">
+            <div class="container bg-dark">
+          <p >Footer section part...</p>
+              </div>
+          </footer>
+          </div>
+      </div>
+    </div> -->
+   
+
+    
+
+  
+
+  
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+		<script src="js/underscore-min.js"></script>
+		<script src="js/moment-with-locales.min.js"></script>
+    <script src="js/gh3.js"></script>    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <script>
+      $(document).ready(function(){ 
+           $("#javaDiv").hide();
+           $("#mysqlDiv").hide();
+
+           $("#javaSubMenuDiv").hide();
+           $("#javaDownCaretId").show();
+           $("#javaUpCaretId").hide();
+           
+           $("#introductionContentDiv").hide();
+           $("#stringContentDiv").hide();
+           
+
+
+        $("#javaId").click(function(){ 
+          $("#javaDiv").show();
+           $("#mysqlDiv").hide();
+           $("#javaSubMenuDiv").hide();
+
+           $("#stringContentDiv").hide();
+        });
+        // $("#mysqlId").click(function(){
+        //    $("#javaDiv").hide();
+        //   $("#mysqlDiv").show();
+
+        //   $("#stringContentDiv").hide();
+        // });
+
+        $("#javaDownCaretId").click(function(){
+          $("#javaSubMenuDiv").slideDown(); //show()
+
+          $("#javaDownCaretId").hide(); //hide
+          $("#javaUpCaretId").slideDown(); //show 
+        });
+
+        $("#javaUpCaretId").click(function(){
+          $("#javaSubMenuDiv").slideUp(); //hide
+
+          $("#javaDownCaretId").show();
+          $("#javaUpCaretId").hide(); 
+        });
+        
+
+        $("#stringId").click(function(){
+          $(".din").hide();
+          $("#stringContentDiv").show();
+        });
+
+        $("#sideMenuId").click(function(){
+          $("#javaDiv").slideDown();
+        });
+        $("#sideMenuId2").click(function(){
+          $("#javaDiv").slideUp();
+        });
+        
+        $("#introductionId").click(function(){
+          $(".din").hide();
+          $("#introductionContentDiv").show();
+         
+        });
+
+
+
+
+
+      });
+      </script>
+
+
+
+
+
+
+<script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+        
+  </body>
+</html>
