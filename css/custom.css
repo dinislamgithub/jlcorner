@@ -38,7 +38,8 @@ footer {
 
 .sidenav {
   height: 1200px;
-  width: 225px;
+  /* width: 225px; */
+  width: 100% !important;
   position: relative;
   z-index: 1;
   top: 0;
